@@ -951,6 +951,7 @@ dl dd {
 }
 
 .regBox {
+    position: relative;
     border-radius: 8px;
     box-sizing: border-box;
     border: 1px #d7d7d7 solid;
@@ -1033,4 +1034,39 @@ dl dd {
     line-height: 50px;
     font-size: 20px;
     border-radius: 10px;
+}
+/* 注册页面新添标签id名 */
+#span1{
+    position: absolute;
+    top: 135px;
+    left: 713px;
+    font-size: 16px;
+}
+#span2{
+    width: 300px;
+    position: absolute;
+    top: 8px;
+    left: 427px;
+    font-size: 16px;
+}
+#span3{
+    width: 300px;
+    position: absolute;
+    top: 367px;
+    left: 715px;
+    font-size: 16px;
+}
+#span4{
+    width: 300px;
+    position: absolute;
+    top: 441px;
+    left: 715px;
+    font-size: 16px;
+}
+#span5{
+    width: 300px;
+    position: absolute;
+    top: 517px;
+    left: 715px;
+    font-size: 16px;
 }
