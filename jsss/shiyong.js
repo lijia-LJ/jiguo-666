@@ -27,6 +27,7 @@ function showData() {
                 // console.log(data);
                 render(data);
                 fn(data);
+                // gn(data)
             } else {
                 console.log('请求失败');
             }
@@ -87,5 +88,32 @@ function fn(date_) {
     }
 
 }
+//酷玩
+// function gn(datey_) {
+//     console.log(datey_);
+//     var str = '';
+//     // ${date_[i].img}
+//     for (var i = 7; i < 23; i++) {
+//         console.log(datey_[i]);
+//         str += `<li>
+//         <a href="use/detail.html">
+//             <img src="${datey_[i].img}" width="220" height="130" />
+//             <div class="info">
+//                 <p class="name">${datey_[i].text}<span>可以测定食物成分及营养</span></p>
+//                 <div class="tip fix">
+//                     <span class="price left">￥ ${datey_[i].price}</span>
+//                     <div class="right icon">
+//                         <span class="xin">${datey_[i].like}</span>
+//                         <span class="look">${datey_[i].word}</span>
+//                     </div>
+//                 </div>
+//             </div>
+//         </a>
+//     </li>`;
+//         var ull_ = document.getElementById('myDiv');
+//         ull_.innerHTML = str;
+//     }
+
+// }
 
 
