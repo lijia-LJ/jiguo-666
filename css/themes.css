@@ -1070,3 +1070,15 @@ dl dd {
     left: 715px;
     font-size: 16px;
 }
+#submit{
+    border: medium none;
+    width: 100%;
+    cursor: pointer;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    border-radius: 10px;
+    background: #fe5341;
+    color: white;
+}
