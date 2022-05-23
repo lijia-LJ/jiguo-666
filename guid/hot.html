@@ -10,6 +10,7 @@
     <link href="../css/style.css" rel="stylesheet" />
     <script src="../js/jquery.min.js"></script>
     <script src="../js/common.js"></script>
+    <!-- <script src="../jsss/shiyong.js"></script> -->
 </head>
 
 <body>
@@ -371,6 +372,12 @@
         }
     }
     showData();
+    // 点击加载更多
+    var play_ = document.getElementsByClassName('more-btn')[0];
+    play_.onclick = function () {
+        this.style.backgroundImage = "url('../css/img/loading-icon.gif')";
+        this.innerHTML = '正在加载中';
+    }
 
 
 

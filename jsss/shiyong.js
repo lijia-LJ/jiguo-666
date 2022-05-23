@@ -130,5 +130,10 @@ window.onload = function () {
         a.style.border = 'none';
     }
 }
+// 点击加载更多
+var play_ = document.getElementsByClassName('more-btn')[0];
+play_.onclick = function () {
+    this.style.backgroundImage = "url('./css/img/loading-icon.gif')";
+}
 
 
