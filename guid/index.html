@@ -10,6 +10,13 @@
     <link href="../css/style.css" rel="stylesheet" />
     <script src="../js/jquery.min.js"></script>
     <script src="../js/common.js"></script>
+
+    <style>
+        .icon .xin1 {
+            background: url(../css/img/xinRedh.png) no-repeat 0 3px;
+            background-size: 12px 13px;
+        }
+    </style>
 </head>
 
 <body>
@@ -354,12 +361,12 @@
         for (var i = 0; i <= 13; i++) {
             str += ` <li>
                             <a href="detail.html">
-                            <img src="${data[i].img}" width="220" height="130" />
+                            <img src="${data[i].img}" width="220" height="130" /></a>
                             <div class="info">
                             <p class="name">${data[i].text}</p>
                             <div class="tip fix">
                             <div class="right icon">
-                            <span class="xin">3</span>
+                            <span class="xin" onclick="xin(this)">3</span>
                             <span class="look">3</span>
                             </div>
                             </div>
@@ -370,6 +377,22 @@
             myul.innerHTML = str;
 
         }
+    }
+
+    function xin(that) {
+        var xin = document.getElementsByClassName('xin');
+        for (var i = 0; i < xin.length; i++) {
+            that.onclick = function () {
+                // console.log(that);
+                if (that.className == 'xin') {
+                    that.className = 'xin1';
+                    that.innerHTML = '4'
+                } else {
+                    that.className = 'xin';
+                }
+            }
+        }
+
     }
     showData();
     // 点击加载更多

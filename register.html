@@ -247,18 +247,13 @@ repassWord.onblur=function(){
     span5.innerHTML='密码设置成功';
     span5.style.color='yellowgreen'; 
     }}
-	点击注册按钮跳转到登录页面
-	var submit=document.getElementById('submit');
-	submit.onclick=function(){
-		submit.innerHTML='注册成功'
-		
+	
+var submit=document.getElementById('submit');
+submit.onclick=function(){
+	if(repassWord.value=passWord.value){
+		window.location.href = 'http://127.0.0.1:5500/jiguo-666/login.html';
 	}
-// var submit=document.getElementById('submit');
-// submit.onclick=function(){
-// 	if(repassWord.value!=passWord.value){
-// 		location.href = './login.html'
-// 	}
-// }
+}
 
 
 
