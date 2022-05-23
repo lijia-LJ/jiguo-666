@@ -127,13 +127,15 @@ xin.onclick = function () {
 // ln();
 //回显首页注册
 window.onload = function () {
-    var p = document.getElementsByClassName('zc')[0];
+    // var p = document.getElementsByClassName('zc')[0];
     var a = document.getElementsByClassName('login right')[0];
     var name = localStorage.getItem('user');
     var islogin = localStorage.getItem('islogin');
     if (islogin) {
-        var str = `${name}`;
-        p.innerHTML = str
+        var str = `hi~&nbsp;${name}`;
+        a.innerHTML = str;
+        a.style.width='100px';
+        a.style.border='none';
     }
 }
 
