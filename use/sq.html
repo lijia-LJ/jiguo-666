@@ -25,7 +25,7 @@
 					<li><a href="../report/index.html">报告</a></li>
 				</ul>
 			</nav>
-			<a href="../regist.html" class="login right">注册</a>
+			<a href="../register.html" class="login right">注册</a>
 			<a href="" class="search right">搜索</a>
 		</div>
 	</header>
@@ -126,20 +126,20 @@
 	// 渲染数据——模板字符串
 	function show(data){
 		var str='';
-		for(var item of data){
-			console.log(item);
+		for(var i=0;i<data.length-1;i++){
+			console.log(i);
 			str+=`<dt>
-						<span class="top-tip shoufa">${item.info_ty}</span>
+						<span class="top-tip shoufa">${data[i].info_ty}</span>
 						<a href="./detail.html">
-						<img src="${item.img}" width="220" height="130"/>
+						<img src="${data[i].img}" width="220" height="130"/>
 						</a>
 						<div class="hot-con">
-							<h2 class="name">${item.text}</h2>
+							<h2 class="name">${data[i].text}</h2>
 							<p class="tabs red">
-								<span>${item.totalnum}</span>
-								<span>${item.num}</span>
+								<span>${data[i].totalnum}</span>
+								<span>${data[i].num}</span>
 							</p>
-							<p class="sq"><span>${item.apply}</span>申请</p>
+							<p class="sq"><span>${data[i].apply}</span>申请</p>
 							<p class="current red">剩余时间2天</p>
 						</div>				
 				</dt> 

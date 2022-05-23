@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>注册</title>
+  <link href="css/common.css" rel="stylesheet"/>
+  <link href="css/themes.css" rel="stylesheet"/>
+  <link href="css/style.css" rel="stylesheet"/>
+  <!-- <script src="js/jquery.min.js"></script> -->
+  <!-- <style>
+	 
+  </style> -->
+  
+ </head>
+ <body>
+	<!--头部-->
+	<header class="header">
+		<div class="wrap fix">
+			<div class="logo left">
+				<a href="index.html"><img src="img/logonew.png" width="132"/></a>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="index.html">首页</a></li>
+					<li><a href="play/index.html">酷玩</a></li>
+					<li><a href="guid/index.html">导购</a></li>
+					<li><a href="use/index.html">试用</a></li>
+					<li><a href="report/index.html">报告</a></li>
+				</ul>
+			</nav>
+			<a href="./login.html" class="login right">登录</a>
+			<a href="" class="search right">搜索</a>
+		</div>
+	</header>
+	<section class="report-box regMain">
+		<div class="wrap regBox">
+			<h2 class="title">注册极果</h2>
+			<form class="regForm" name="my_f1" action="" method="post" onsubmit="return check(this);">
+				<p><input type="text" placeholder="请输入登录手机号" pattern="^1[34578][0-9]{9}$" required="required" name="tel"/><span id="span1"></span></p>
+				
+				<p>
+					<input type="text" placeholder="请输入图片校验码" required="required" name="imgCode"/>
+					<img src="img/imgCode.jpg" width="132" height="35"/>
+				</p>
+
+				<p>
+					<input type="text" placeholder="请输入4位数字验证码" pattern="^\d{4}$" required="required" name="code"/>
+					<span id="span2"></span>
+					<a href="javascript:void(0)" class="getCode">获取验证码</a>
+					
+				</p>
+
+				<p><input type="text" placeholder="请输入用户名" required="required"/><span id="span3"></span></p>
+
+				<p><input type="password" placeholder="请输入新密码" required="required" name="psw1"/><span id="span4"></span></p>
+
+				<p><input type="password" placeholder="确定新密码" required="required" name="psw2"/><span id="span5"></span></p>
+				
+				<!-- <a href="./login.html"><p><button id="submit">立即注册</button></p></a> -->
+				<a href="./login.html"><p  id="submit">立即注册</p></a>
+				
+			</form>
+		</div>
+	</section>
+	<!--底部-->
+	<footer class="foot">
+		<section class="wrap">
+			<div class="fix">
+				<dl><img src="img/code.png" width="160" height="160"/></dl>
+				<dl>
+					<dt><img src="img/logoImg.jpg"/></dt>
+					<dd>全球酷玩试用导购平台<br>酷·新奇·好玩·品质</dd>
+					<dd>微信添加“JguoJguo” <br>获取我们的服务。</dd>
+				</dl>
+				<dl>
+					<dt>免费试用</dt>
+					<dd><a href="help.html#lc">试用流程</a></dd>
+					<dd><a href="help.html#cg">如何提高成功率</a></dd>
+				</dl>
+				<dl>
+					<dt>友情链接</dt>
+					<dd><a href="http://www.zhidx.com/">智东西</a><a href="http://www.weibusi.net/">WEIBUSI</a></dd>
+					<dd><a href="http://it.sohu.com/">搜狐IT</a><a href="http://tech.qq.com/">腾讯科技</a></dd>
+					<dd><a href="http://digi.it.sohu.com/">搜狐数码</a><a href="http://tech.ifeng.com/">凤凰科技</a></dd>
+					<dd><a href="http://digi.ifeng.com/">凤凰数码</a><a href="http://product.pconline.com.cn/">PConline</a></dd>
+					<dd><a href="http://www.pcpop.com/">泡泡网</a><a href="http://www.3wcoffee.com/">3W咖啡</a></dd>
+					<dd><a href="http://bbs.zuk.cn/">ZUK社区</a><a href="http://emie.com/">亿觅emie</a></dd>
+					<dd><a href="http://www.geekpark.net/">极客公园</a><a href="http://zdm.yixun.com/index.html">易迅易启玩</a></dd>
+					<dd><a href="http://www.guoku.com/">果库</a></dd>
+				</dl>
+				<dl>
+					<dt>购买攻略</dt>
+					<dd><a href="#">美亚海淘教程</a></dd>
+					<dd><a href="#">日亚海淘教程</a></dd>
+					<dd><a href="#">海淘转运攻略</a></dd>
+					<dd><a href="#">kickstarter 众筹购买攻略</a></dd>
+					<dd><a href="#">indiegogo 众筹购买攻略</a></dd>
+				</dl>
+				<dl>
+					<dt>厂商合作</dt>
+					<dd><a href="about.html">关于极果</a></dd>
+					<dd><a href="about.html#connect">联系我们</a></dd>
+					<dd><a href="mailto:BD@jiguo.com">商务合作：BD@jiguo.com</a></dd>
+					<dd><a href="mailto:CEO@jiguo.com">CEO邮箱：CEO@jiguo.com</a></dd>
+				</dl>
+			</div>
+			<p class="copy">© 2016 极果版权所有</p>
+		</section>
+	</footer>
+ </body>
+</html>
+<script>
+	// 1、验证手机号是否合法
+	// 1、获取输入框内容
+	var phonenumber=document.getElementsByTagName('input')[0];
+	var span1=document.getElementById('span1');
+	// 1.1点击输入框
+	phonenumber.onfocus=function(){
+    span1.innerHTML='请输入11位的手机号';
+}
+	// 1.2鼠标失去焦点
+	phonenumber.onblur=function(){
+    //如果号码为空时
+    if(phonenumber.value==0){
+        span1.innerHTML='手机号不能为空！';
+        span1.style.color='red';
+    }else if(!/^1[3578]\d{9}$/.test(phonenumber.value)){
+        span1.innerHTML='长度不在范围内或者存在非法字符';
+        span1.style.color='red';
+    }else{
+            span1.innerHTML='手机号输入正确';
+            span1.style.color='yellowgreen';
+        }
+}
+	//  2、图片验证
+	var picture=document.getElementsByTagName('input')[1];
+	picture.onfocus=function(){
+		if(phonenumber.value==0){
+        span1.innerHTML='请先输入手机号！';
+        span1.style.color='red';
+    }
+	}
+	picture.onblur=function(){
+		if(phonenumber.value==0){
+			span1.innerHTML='请先输入手机号！';
+        	span1.style.color='red';
+		}else if(picture.value=='r2B7'){
+		alert('图片验证成功');
+	}else{
+		alert('图片验证失败');
+	}
+	}
+	// 3、获取数字验证码
+	var timer=null;
+	var time=60;
+	var yanzheng=document.getElementsByTagName('input')[2];
+	var span2=document.getElementById('span2');
+	var getCode=document.getElementsByClassName('getCode')[0];
+	// 验证码输入框获取焦点
+yanzheng.onfocus=function(){
+	span2.innerHTML='请先获取验证码';
+	span2.style.color='black';
+}
+getCode.onclick=function(){
+	if(phonenumber.value==0){
+        span1.innerHTML='您还未输入手机号！'; 
+        span1.style.color='red';
+          
+    }else{
+		clearInterval(timer)
+        timer=setInterval(function(){
+            time--;
+            getCode.innerHTML=time+'s后重发';
+            if(time==54){
+                alert('验证码为：1234，请不要泄露给他人。')
+                clearInterval(timer);
+			}
+			}
+		,1000)}
+		// 失去焦点
+yanzheng.onblur=function(){
+    if(yanzheng.value!='1234'){
+        span2.innerHTML='验证码输入有误';
+        span2.style.color='red';
+    }else{
+        span2.innerHTML='验证码输入正确';
+        span2.style.color='yellowgreen';
+    }
+    }
+			}
+	// 4、获取用户名
+	var userName=document.getElementsByTagName('input')[3];
+	var span3=document.getElementById('span3');
+	userName.onfocus=function(){
+		span3.innerHTML='输入由汉字组成的用户名'
+
+	}
+	userName.onblur=function(){
+    if(userName.value==0){
+        span3.innerHTML='用户名不能为空！'; 
+        span3.style.color='red';
+    }else if(!/[\u4e00-\u9fa5]/gm.test(userName.value)){
+     
+        span3.innerHTML='存在非法字符';
+        span3.style.color='red';
+       
+    }else{
+        span3.innerHTML='用户名输入成功'; 
+        span3.style.color='yellowgreen';
+    }
+}
+// 5、设置密码
+// 输入密码部分
+// 获取输入框
+var passWord=document.getElementsByTagName('input')[4];
+var span4=document.getElementById('span4');
+passWord.onfocus=function(){
+    span4.innerHTML='请输入6位由数字字母下划线组成的密码';
+}
+passWord.onblur=function(){
+    console.log(passWord.value);
+    if(passWord.value.length!=6){
+        span4.innerHTML='密码只能是6位，请重新设置！';
+        span4.style.color='red';
+    }else if(!/^\w+$/.test(passWord.value)){
+        span4.innerHTML='密码必须包含数字字母下划线！';
+        span4.style.color='red';
+    }else{
+        span4.innerHTML='密码设置成功'; 
+        span4.style.color='yellowgreen';
+    }
+}
+// 确认密码部分
+var repassWord=document.getElementsByTagName('input')[5];
+var span5=document.getElementById('span5');
+repassWord.onfocus=function(){
+    span5.innerHTML='请确认密码';
+}
+repassWord.onblur=function(){
+    if(repassWord.value!=passWord.value){
+        span5.innerHTML='输入有误！';
+    span5.style.color='red';
+    }else{
+    span5.innerHTML='密码设置成功';
+    span5.style.color='yellowgreen'; 
+    }}
+	点击注册按钮跳转到登录页面
+	var submit=document.getElementById('submit');
+	submit.onclick=function(){
+		submit.innerHTML='注册成功'
+		
+	}
+
+
+
+
+
+
+	
+
+
+
+
+	
+ </script>
