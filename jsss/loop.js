@@ -10,7 +10,7 @@ function showData() {
                 var data = JSON.parse(ajax_.responseText);
                 // console.log(data);
                 render(data);
-                fn(data)
+                // fn(data);
 
             } else {
                 console.log('请求失败');
@@ -35,36 +35,6 @@ function render(data_) {
                         <span class="avt"></span>
                         <span class="name">${data_[i].uName}</span>
                         <span class="time">${data_[i].endTime}</span>
-                    </div>
-                    <div class="right icon">
-                        <span class="zan">3</span>
-                        <span class="look">3</span>
-                    </div>
-                </div>
-            </div>
-        </a>
-    </li>`;
-
-        var ul_ = document.getElementById('myDiv');
-        ul_.innerHTML = str;
-    }
-}
-//报告最新
-function fn(date_) {
-    // console.log(data_);${data_[i].img}
-    var str = '';
-    for (var i = 8; i < 12; i++) {
-        // console.log(data_[i]);
-        str += `<li>
-        <a href="../guid/detail.html">
-            <img src="${date_[i].img}" width="700" height="412" />
-            <div class="info">
-                <p class="title">空气净化器里面学问多得惊呆你，你选对了吗？</p>
-                <div class="btm fix">
-                    <div class="userInfo left">
-                        <span class="avt"></span>
-                        <span class="name">${date_[i].uName}</span>
-                        <span class="time">${date_[i].endTime}</span>
                     </div>
                     <div class="right icon">
                         <span class="zan">3</span>
