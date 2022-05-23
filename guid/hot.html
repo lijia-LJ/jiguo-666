@@ -44,7 +44,7 @@
     <section class="report-box">
         <div class="wrap guide common pad25">
             <ul id="myDiv">
-                <li>
+                <!-- <li>
                     <a href="detail.html">
                         <img src="../img/g4.jpg" width="220" height="130" />
                         <div class="info">
@@ -267,7 +267,7 @@
                             </div>
                         </div>
                     </a>
-                </li>
+                </li> -->
             </ul>
             <div class="playMore">
                 <a href="javascript:void(0);" class="more-btn" id="guid-btn">点击加载更多</a>
@@ -327,52 +327,51 @@
 
 <script>
 
-    window.onload = function fn() {
+    function showData() {
         // 1、创建对象
         var ajax_ = new XMLHttpRequest() || new ActiveXObject('Microsoft.XMLHTT');
         //2、建立连接
-        // ajax_.open('get','./demo.txt',true);
-        // ajax_.open('get', 'http://localhost:3000/play/hot', true);
-        ajax_.open('get', 'http://127.0.0.1/3000/guid/hot', true);
-
+        ajax_.open('get', 'http://127.0.0.1:3000/guid/hot', true);
         //3、发送请求
         ajax_.send();
-
         //4、接收服务器数据
         ajax_.onreadystatechange = function () {
-
             if (ajax_.readyState == 4) {
                 if (ajax_.status == 200) {
-                    // console.log(ajax_.responseText);
-                    var json_ = ajax_.responseText;
-
-                    // json转换字符串
-                    json_ = JSON.parse(json_);
-
-                    // console.log(json_);
-                    var str = '';
-                    for (var item of json_) {
-                        for (var i = 0; i <= json_.length; i++) {
-                            console.log(item[i].img);
-                            str += `<li>
-                                        <a href="detail.html">
-                                        <img src="${item[i].img}" width="220" height="130" />
-                                    </li>`
-
-                        }
-                    }
-
-                    var myul = document.getElementById('myDiv');
-                    myul.innerHTML = str;
-
-                    // console.log(str);
-                    // myul.appendChild(str);
+                    var data = JSON.parse(ajax_.responseText);
+                    console.log(data);
+                    show(data);
                 } else {
-                    console.log('获取连接失败');
+                    console.log('请求失败');
                 }
             }
         }
-
     }
+
+    function show(data) {
+        var str = '';
+        for (var i = 2; i <= 13; i++) {
+            str += ` <li>
+                            <a href="detail.html">
+                            <img src="${data[i].img}" width="220" height="130" />
+                            <div class="info">
+                            <p class="name">${data[i].text}</p>
+                            <div class="tip fix">
+                            <div class="right icon">
+                            <span class="xin">3</span>
+                            <span class="look">3</span>
+                            </div>
+                            </div>
+                            </div>
+                            </a>
+                        </li>`
+            var myul = document.getElementById('myDiv');
+            myul.innerHTML = str;
+
+        }
+    }
+    showData();
+
+
 
 </script>

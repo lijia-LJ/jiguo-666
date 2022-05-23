@@ -191,7 +191,7 @@
 		//2、建立连接
 		// ajax_.open('get','./demo.txt',true);
 		// ajax_.open('get', 'http://localhost:3000/play/hot', true);
-		ajax_.open('get', 'http://localhost:3000/useing/public', true);
+		ajax_.open('get', 'http://localhost:3000/guid/new', true);
 
 		//3、发送请求
 		ajax_.send();
@@ -212,22 +212,10 @@
 					for (var item of json_) {
 						for (var i = 0; i <= json_.length; i++) {
 							console.log(item[i].img);
-							str += `
-							<li>
-							< a href=" ">
-						< img src="${item[i].img}" alt="" width="213" height="130">
-						<div class="info">
-						<p class="name">${item[i].text}</p >
-						<div class="info_1">
-						<div class="info_2">
-						<span class="mind">3</span>
-						<span class="browse">3</span>
-						</div>
-						</div>
-						</div>
-						</ a>
-						</li>
-						`
+							str += `<p>${item[i].text}</p>
+									<p><${item[i].img}></p>
+									<p class="f16 acenter"><b>${item[i].text}</b></p>`
+
 						}
 					}
 
