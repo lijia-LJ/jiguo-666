@@ -61,7 +61,7 @@ function fn(date_) {
                 <p class="name">${date_[i].text}</p>
                 <div class="tip fix">
                     <div class="right icon">
-                        <span class="xin">3</span>
+                        <span class="xin"  onclick="xin(this)">3</span>
                         <span class="look">3</span>
                     </div>
                 </div>
@@ -88,7 +88,7 @@ function gn(ku) {
                 <div class="tip fix">
                     <span class="price left">￥ ${ku[i].apply}</span>
                     <div class="right icon">
-                        <span class="xin">3</span>
+                        <span class="xin" onclick="xin(this)">3</span>
                         <span class="look">3</span>
                     </div>
                 </div>
@@ -101,30 +101,21 @@ function gn(ku) {
 
 }
 //心变红
-var xin = document.getElementsByClassName('xin');
-xin.onclick = function () {
-    this.style.backgrund = 'url(img/xinRedh.png) no-repeat left center'
-};
-//轮播
-// var slide = document.getElementsByClassName('slideshow')[0];
-// var num = 0;
-// function ln() {
-//     var timer = setInterval(function () {
-//         num += -10;
-//         slide.firstElementChild.style.marginLeft = num + 'px';
-//         if (num == -1000) {
-//             slide.firstElementChild.style.marginLeft = 0 + 'px';
-//             slide.appendChild(slide.firstElementChild);
-//             num = 0;
-//             clearInterval(timer);
-//             setInterval(function () {
-//                 ln();
+function xin(that) {
+    var xin = document.getElementsByClassName('xin');
+    for (var i = 0; i < xin.length; i++) {
+        that.onclick = function () {
+            // console.log(that);
+            if (that.className == 'xin') {
+                that.className = 'xin1';
+            } else {
+                that.className = 'xin';
+            }
+        }
+    }
 
-//             }, 1000)
-//         }
-//     }, 25)
-// }
-// ln();
+}
+
 //回显首页注册
 window.onload = function () {
     // var p = document.getElementsByClassName('zc')[0];
@@ -134,8 +125,8 @@ window.onload = function () {
     if (islogin) {
         var str = `hi~&nbsp;${name}`;
         a.innerHTML = str;
-        a.style.width='100px';
-        a.style.border='none';
+        a.style.width = '100px';
+        a.style.border = 'none';
     }
 }
 
