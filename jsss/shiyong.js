@@ -108,6 +108,7 @@ function xin(that) {
             // console.log(that);
             if (that.className == 'xin') {
                 that.className = 'xin1';
+                that.innerHTML = '4'
             } else {
                 that.className = 'xin';
             }
