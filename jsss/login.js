@@ -6,7 +6,10 @@ function login() {
         localStorage.setItem('user', name);
         localStorage.setItem('pass', password);
         localStorage.setItem('islogin', true);
-        window.location.href = 'http://127.0.0.1:5500/index.html'
+        window.location.href = 'http://127.0.0.1:5500/jiguo-666/index.html'
+        // window.location.href='http://www.baidu.com';
+        // window.location.href='file:///F:/%E4%BD%9C%E4%B8%9A/5.22%E6%9E%81%E6%9E%9C/jiguo-666/index.html';
+
     }
 }
 

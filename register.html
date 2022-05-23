@@ -57,7 +57,9 @@
 				<p><input type="password" placeholder="确定新密码" required="required" name="psw2"/><span id="span5"></span></p>
 				
 				<!-- <a href="./login.html"><p><button id="submit">立即注册</button></p></a> -->
-				<a href="./login.html"><p  id="submit">立即注册</p></a>
+				<!-- <a href="./login.html"><p  id="submit">立即注册</p></a> -->
+				<p  id="submit">立即注册</p>
+
 				
 			</form>
 		</div>
@@ -174,6 +176,7 @@ getCode.onclick=function(){
             if(time==54){
                 alert('验证码为：1234，请不要泄露给他人。')
                 clearInterval(timer);
+				getCode.innerHTML='验证成功';
 			}
 			}
 		,1000)}
@@ -250,7 +253,12 @@ repassWord.onblur=function(){
 		submit.innerHTML='注册成功'
 		
 	}
-
+// var submit=document.getElementById('submit');
+// submit.onclick=function(){
+// 	if(repassWord.value!=passWord.value){
+// 		location.href = './login.html'
+// 	}
+// }
 
 
 
