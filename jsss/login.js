@@ -6,7 +6,7 @@ function login() {
         localStorage.setItem('user', name);
         localStorage.setItem('pass', password);
         localStorage.setItem('islogin', true);
-        window.location.href = 'https://lijia-lj.github.io/jiguo-666/'
+        // window.location.href = 'https://lijia-lj.github.io/jiguo-666/'
         
 
     }
