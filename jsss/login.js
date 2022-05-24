@@ -6,8 +6,8 @@ function login() {
         localStorage.setItem('user', name);
         localStorage.setItem('pass', password);
         localStorage.setItem('islogin', true);
-        window.location.href = 'http://127.0.0.1:5500/jiguo-666/index.html'
-        
+        window.location.href = 'file:///G:/%E5%89%8D%E7%AB%AFGit/%E6%9E%81%E6%9E%9C%E9%A1%B9%E7%9B%AE/jiguo-666/index.html'
+
 
     }
 }
