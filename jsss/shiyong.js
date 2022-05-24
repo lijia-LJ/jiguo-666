@@ -61,7 +61,7 @@ function fn(date_) {
                 <p class="name">${date_[i].text}</p>
                 <div class="tip fix">
                     <div class="right icon">
-                        <span class="xin"  onclick="xin(this)">3</span>
+                        <span class="xin"  onmouseover="xin(this)">3</span>
                         <span class="look">3</span>
                     </div>
                 </div>
@@ -88,7 +88,7 @@ function gn(ku) {
                 <div class="tip fix">
                     <span class="price left">￥ ${ku[i].apply}</span>
                     <div class="right icon">
-                        <span class="xin" onclick="xin(this)">3</span>
+                        <span class="xin" onmouseover="xin(this)">3</span>
                         <span class="look">3</span>
                     </div>
                 </div>
